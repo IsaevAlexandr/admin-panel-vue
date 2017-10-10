@@ -15,24 +15,38 @@ export default {
         display: flex;
         justify-content: center;
         vertical-align: middle;
-        padding: 20px;
+        padding: rem(20px);
         background-color: $green;
+        @include mob {
+            flex-direction: column;
+            flex-flow: column-reverse;
+            align-items: center;
+            text-align: center;
+        }
     }
     .title {
         margin-right: auto;
         color: $white;
         font-family: Roboto;
-        font-size: 28px;
+        font-size: rem(28px);
         font-weight: 500;
+        @include mob {
+            margin: initial;
+        }
     }
     .link {
         display: inline-block;
         color: $white;
         font-family: Roboto;
-        font-size: 16px;
+        opacity: 0.7;
+        font-size: rem(16px);
         font-weight: 500;
         text-decoration: underline;
         vertical-align: middle;
+
+        @include mob {
+            margin-bottom: rem(12px);
+        }
 
         /* выравнивание по центру */
         &:before {

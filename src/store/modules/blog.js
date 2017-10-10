@@ -1,4 +1,4 @@
-const skills = {
+const blog = {
     /* хранения данных */
     state: {
         /* объект для хранения данных */
@@ -8,27 +8,24 @@ const skills = {
     },
     /* getter для обращения к стейту, а не на прямую, запрос данных */
     getters: {
-        skills(state) {
+        blog(state) {
             return state.data;
         },
 
         /* для кнопки добавить */
-        isSkillChanged(state) {
+        isBlogChanged(state) {
             return state.change;
         }
     },
     mutations: {
-        addNewSkill(state, skill) {
-            state.data.push(skill);
-            state.change = false;
+        addNewArticle(state, article) {
+            state.data.push(article);
+            console.log('В хранилище сейчас следующие статьи', state.data);
         },
-        removeSkillFromStore(state, id) {
+        removeArticleFromStore(state, id) {
             state.data = state.data.filter(skill => skill.id !== id)
-            state.change = false;
         },
-        changeStateStatus(state) {
-            state.change = true;
-        }
+
     },
     /* действия с данными */
     actions: {
@@ -36,14 +33,14 @@ const skills = {
 
         /* деструктуризация */
         /* приходит этот же объект skills, только выбираются два метода */
-        fetchSkills({ state, rootGetters }) {
+        fetchArticles({ state, rootGetters }) {
             const { $http } = rootGetters; // тоже, что и rootGetters.$http. поскольку в rootGetters 1 объект .$http
 
             /* относительный путь не сработал '../../' */
             /* отправляем запрос методом get на указанный url */
             /* тело ответа кладем в хранилище state */
             /* метод вызывает компонент skill-list */
-            $http.get('/src/components/About/data.json')
+            $http.get('/src/components/Blog/data.json')
                 .then(response => {
                     state.data = response.body;
                 }, error => {
@@ -56,4 +53,4 @@ const skills = {
 
 
 
-export default skills
+export default blog;

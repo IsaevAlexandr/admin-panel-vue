@@ -36,7 +36,6 @@ export default {
     min-height: 650px;
     display: flex;
     flex-direction: column;
-    overflow-x: hidden;
   }
   .content {
     flex: 1;

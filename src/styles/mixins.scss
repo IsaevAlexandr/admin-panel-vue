@@ -2,14 +2,8 @@
     @return $px / 16px+0rem;
 }
 
-@mixin tab {
-    @media screen and (max-width: $tablets) {
-        @content;
-    }
-}
-
-@mixin mob {
-    @media screen and (max-width: $mobile) {
+@mixin large {
+    @media screen and (max-width: $large) {
         @content;
     }
 }
@@ -20,8 +14,14 @@
     }
 }
 
-@mixin large {
-    @media screen and (max-width: $large) {
+@mixin tab {
+    @media screen and (max-width: $tablets) {
+        @content;
+    }
+}
+
+@mixin mob {
+    @media screen and (max-width: $mobile) {
         @content;
     }
 }

@@ -7,6 +7,7 @@ Vue.use(Vuex);
 Vue.use(VueResourse);
 
 import skills from './modules/skills';
+import blog from './modules/blog';
 
 /* подключаем модули */
 export const store = new Vuex.Store({
@@ -15,6 +16,7 @@ export const store = new Vuex.Store({
         $http: () => (VueResourse)
     },
     modules: {
-        skills
+        skills,
+        blog
     }
 })

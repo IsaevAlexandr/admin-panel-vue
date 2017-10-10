@@ -15,7 +15,7 @@
                 type='button' 
                 @click='addNewSkill(skillsType)' 
                 :disabled='validation.hasError("newSkill")'
-            ) Добавить
+            ) Добавить навык
             input(
                 type='text'
                 v-model='newSkill'
@@ -89,8 +89,6 @@ export default {
 }
 </script>
 
-<style lang='scss' scoped>
-    .error {
-        border: 2px solid red;
-    }
+<style lang='scss' scoped src='./styles.scss'>
+    
 </style>
